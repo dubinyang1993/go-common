@@ -1,0 +1,24 @@
+mysql:
+  addr: 127.0.0.1:3306
+  username: root
+  password: root
+  datebase: test
+  maxidle: 1000
+  maxoper: 1000
+  maxlifetime: 1000
+
+redis:
+  addr: 127.0.0.1:6379
+  password:
+  maxidle: 1000
+  maxactive: 1000
+
+log:
+  writers: file
+  logger_level: DEBUG
+  logger_file: log/go-comman.log
+  log_format_text: true
+  rollingPolicy: size
+  log_rotate_date: 1
+  log_rotate_size: 1
+  log_backup_count: 7
