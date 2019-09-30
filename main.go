@@ -1,11 +1,11 @@
 package main
 
 import (
+	"fmt"
 	"github.com/lexkong/log"
 	"go-common/config"
-	"go-common/redis"
 	"go-common/db"
-	"fmt"
+	"go-common/redis"
 )
 
 func main() {
@@ -17,6 +17,6 @@ func main() {
 	//初始化数据库
 	db.Init()
 
-	//初始化Redis
+	//初始化Redi
 	redis.Init()
 }

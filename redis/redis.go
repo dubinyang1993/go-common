@@ -1,11 +1,11 @@
 package redis
 
 import (
-	"github.com/garyburd/redigo/redis"
-	"time"
-	"github.com/spf13/viper"
-	"github.com/lexkong/log"
 	"fmt"
+	"github.com/garyburd/redigo/redis"
+	"github.com/lexkong/log"
+	"github.com/spf13/viper"
+	"time"
 )
 
 var RedisClient *redis.Pool

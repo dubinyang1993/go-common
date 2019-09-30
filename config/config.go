@@ -1,12 +1,12 @@
 package config
 
 import (
-	"github.com/spf13/viper"
 	"github.com/lexkong/log"
+	"github.com/spf13/viper"
 )
 
 func Init() {
-	viper.AddConfigPath("conf")
+	viper.AddConfigPath("conf") // 路径要注意
 	viper.SetConfigName("config")
 	viper.SetConfigType("yaml")
 
