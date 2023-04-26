@@ -1,12 +1,12 @@
-package db
+package mysql
 
 import (
+	"fmt"
+	"time"
+
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
-	"time"
 	"github.com/spf13/viper"
-	"github.com/lexkong/log"
-	"fmt"
 )
 
 var DB *gorm.DB
@@ -24,7 +24,6 @@ func Init() {
 	var err error
 	DB, err = gorm.Open("mysql", dsn)
 	if err != nil {
-		log.Error("MySQL conn failed:", err)
 		panic("MySQL conn failed:" + err.Error())
 	}
 
@@ -33,5 +32,4 @@ func Init() {
 	DB.DB().SetConnMaxLifetime(maxlifetime * time.Second)
 
 	fmt.Println("MySQL conn successful.")
-	log.Info("MySQL conn successful.")
 }

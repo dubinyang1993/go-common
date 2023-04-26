@@ -2,10 +2,10 @@ package redis
 
 import (
 	"fmt"
-	"github.com/garyburd/redigo/redis"
-	"github.com/lexkong/log"
-	"github.com/spf13/viper"
 	"time"
+
+	"github.com/garyburd/redigo/redis"
+	"github.com/spf13/viper"
 )
 
 var RedisClient *redis.Pool
@@ -17,7 +17,6 @@ func Init() {
 	defer r.Close()
 
 	fmt.Println("Redis conn successful.")
-	log.Info("Redis conn successful.")
 }
 
 func initRedis() {
@@ -37,7 +36,6 @@ func initRedis() {
 			options := redis.DialPassword(password) // 有密码时，把options传入下面Dial方法的最后一个参数上
 			c, err := redis.Dial("tcp", addr, options)
 			if err != nil {
-				log.Error("Redis conn failed:", err)
 				panic("Redis conn failed:" + err.Error())
 			}
 			return c, nil
